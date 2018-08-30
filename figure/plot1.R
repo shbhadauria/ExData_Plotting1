@@ -8,10 +8,9 @@ subset_data=subset(data,date >="2007-02-01" & date <="2007-02-02")
 
 #plot 1
 library(dplyr)
-df <- subset_data %>% group_by(Global_active_power) %>% summarise(Frequency= n())
-df$Global_active_power<-as.numeric(df$Global_active_power)
+subset_data$Global_active_power<-as.numeric(subset_data$Global_active_power)
 
 # Create the bar plot.
 library(datasets)
-hist(df$Global_active_power,col="Red", xlab="Global Active Power(Kilowatts)", main= "Global Active Power")
+hist(subset_data$Global_active_power,col="Red", xlab="Global Active Power(Kilowatts)", main= "Global Active Power")
                                                                                                           
